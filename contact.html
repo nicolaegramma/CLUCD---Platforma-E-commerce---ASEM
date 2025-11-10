@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - CLUCD</title>
+  <link rel="icon" type="image/png" href="img/clucd-main.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/produse.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+
+<body>
+<header class="header-fixed">
+    <div class="topbar">
+      <div class="topbar-content">
+        <span>📞 +373 600 00 000</span>
+        <span>✉️ contact@clucd.md</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="img/clucd-logo.png" alt="CLUCD" />
+      </a>
+	  
+	  	<button class="hamburger" onclick="toggleMobileMenu()">
+		  <i class="fas fa-bars"></i>
+		</button>
+	
+	
+  <ul class="nav-links">
+    <li><a href="index.html">Acasă</a></li>
+    <li class="dropdown">
+      <a href="produse.html">Produse</a>
+      <ul class="dropdown-menu">
+        <li><a href="chitare.html">Chitare</a></li>
+        <li><a href="efecte.html">Efecte și Amplificatoare</a></li>
+        <li><a href="accesorii.html">Accesorii</a></li>
+      </ul>
+    </li>
+	
+	
+	<li class="dropdown">
+	  <a href="despre.html">Despre</a>
+	  <ul class="dropdown-menu">
+		<li><a href="despre.html">Noi</a></li>
+		<li><a href="livrare.html">Livrare</a></li>
+		<li><a href="garantie.html">Garanție</a></li>
+		<li><a href="service.html">Service</a></li>
+	  </ul>
+	</li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+	  
+      <button class="cart-modern" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        Coș (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+</header>
+
+<main>
+    <section class="contact">
+		  <h2>Contactează-ne</h2>
+		  <p>Ne poți contacta oricând pentru informații suplimentare.</p>
+		  <ul style="list-style: none; padding: 0;">
+			<li><strong>Telefon:</strong> +373 600 00 000</li>
+			<li><strong>Email:</strong> contact@clucd.md</li>
+			<li><strong>Adresă:</strong> Str. Muzicii 10, Chișinău, Moldova</li>
+			<li><strong>Program:</strong> Luni - Vineri, 10:00 - 18:00</li>
+		  </ul>
+    </section>
+	<div class="map-container">
+		  <iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.808539090306!2d28.856190315869034!3d47.010452979151834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c38c2a6e47f%3A0x4ac0bdbcc53a3d86!2sStrada%20Muzicii%2010%2C%20Chișinău%2C%20Moldova!5e0!3m2!1sro!2s!4v1715508100000!5m2!1sro!2s"
+			width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+		  </iframe>
+	</div>
+
+	<div class="contact-socials">
+		  <a href="https://www.facebook.com/" target="_blank">
+			<i class="fab fa-facebook-f"></i> Facebook
+		  </a>
+		  <a href="https://wa.me/37360000000" target="_blank">
+			<i class="fab fa-whatsapp"></i> WhatsApp
+		  </a>
+		  <a href="mailto:contact@clucd.md">
+			<i class="fas fa-envelope"></i> Email
+		  </a>
+		  <a href="https://www.instagram.com/" target="_blank">
+			<i class="fab fa-instagram"></i> Instagram
+		  </a>
+	</div>
+</main>
+
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CLUCD. Toate drepturile rezervate.</p>
+            <div class="socials">
+                <a href="livrare.html">Livrare</a> |
+                <a href="garantie.html">Garanție</a> |
+                <a href="service.html">Service</a>
+            </div>
+			<div class="footer-logos">
+			  <img src="img/clucd-logo.png" alt="CLUCD" class="footer-logo" />
+			  <img src="img/visa-logo.png" alt="Visa" class="footer-logo-visa" />
+			  <img src="img/mastercard-logo.png" alt="Mastercard" class="footer-logo-mastercard" />
+			</div>
+        </div>
+</footer>
+	
+	<div class="modal" id="cart-modal">
+	  <div class="modal-content cart-modal-content">
+		<span class="modal-close" onclick="closeCartModal()">&times;</span>
+		<h3>Coșul Meu</h3>
+		<ul id="cart-items"></ul>
+		<p><strong>Total:</strong> <span id="cart-total">0</span> MDL</p>
+			<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+			  <button onclick="finalizeazaComanda()">Finalizează comanda</button>
+			  <button onclick="golesteCos()" style="background:red;">Golește coșul</button>
+			</div>
+	  </div>
+	</div>	
+
+<button id="scrollTopBtn" title="Sus">↑</button>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

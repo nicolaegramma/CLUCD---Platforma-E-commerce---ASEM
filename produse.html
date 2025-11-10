@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produse - CLUCD</title>
+  <link rel="icon" type="image/png" href="img/clucd-main.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/produse.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+<header class="header-fixed">
+	  <div class="topbar">
+		<div class="topbar-content">
+		  <span>📞 +373 600 00 000</span>
+		  <span>✉️ contact@clucd.md</span>
+		</div>
+	  </div>
+
+	  <nav class="navbar">
+		<div class="nav-left">
+		  <a href="index.html" class="logo">
+			<img src="img/clucd-logo.png" alt="CLUCD" />
+		  </a>
+		</div>
+
+		<button class="hamburger" onclick="toggleMobileMenu()">
+		  <i class="fas fa-bars"></i>
+		</button>
+	
+		<div class="nav-center">
+		  <ul class="nav-links">
+			<li><a href="index.html">Acasă</a></li>
+			<li class="dropdown">
+			  <a href="produse.html">Produse</a>
+			  <ul class="dropdown-menu">
+				<li><a href="chitare.html">Chitare</a></li>
+				<li><a href="efecte.html">Efecte și Amplificatoare</a></li>
+				<li><a href="accesorii.html">Accesorii</a></li>
+			  </ul>
+			</li>
+			<li class="dropdown">
+			  <a href="despre.html">Despre</a>
+			  <ul class="dropdown-menu">
+				<li><a href="despre.html">Noi</a></li>
+				<li><a href="livrare.html">Livrare</a></li>
+				<li><a href="garantie.html">Garanție</a></li>
+				<li><a href="service.html">Service</a></li>
+			  </ul>
+			</li>
+			<li><a href="contact.html">Contact</a></li>
+		  </ul>
+		</div>
+
+		<div class="nav-right">
+		  <button class="cart-modern" onclick="toggleCart()">
+			<i class="fas fa-shopping-cart"></i>
+			Coș (<span id="cart-count">0</span>)
+		  </button>
+		</div>
+	  </nav>
+</header>
+
+
+<main>
+	<section class="categorii-produse">
+		<h2>Categorii Produse</h2>
+			<div class="category-grid">
+			<a href="chitare.html" class="category-card">
+			  <img id="chitare-img" src="img/chitare/ibanez/ibanez-electro.jpg" alt="Chitare">
+			  <div class="category-title">Chitare</div>
+			</a>
+
+			<a href="efecte.html" class="category-card">
+			<img src="img/accesorii/Image_TE_0709-AFS_HALL-OF-FAME-2-REVERB_Top_XL.png" alt="Efecte și Amplificatoare">
+			<div class="category-title">Efecte și Amplificatoare</div>
+			</a>
+			<a href="accesorii.html" class="category-card">
+			<img src="img/accesorii/fender cell.jpg" alt="Accesorii">
+			<div class="category-title">Accesorii</div>
+			</a>
+			</div>
+    </section>
+	
+	 <section class="brand-slider-auto">
+		  <h3>Banduri Premium</h3>
+		  <div class="slider-auto-track">
+			<div class="brand"><img src="img/parteneri/ariaproII-logo.png" alt="ariaproii"></div>
+			<div class="brand"><img src="img/parteneri/boss-seeklogo.png" alt="boss"></div>
+			<div class="brand"><img src="img/parteneri/daddario-seeklogo.png" alt="daddario"></div>
+			<div class="brand"><img src="img/parteneri/epiphone-guitars-seeklogo.png" alt="epiphone"></div>
+			<div class="brand"><img src="img/parteneri/ibanez-seeklogo.png" alt="ibanez"></div>
+			<div class="brand"><img src="img/parteneri/gibson-seeklogo.png" alt="gibson"></div>
+			<div class="brand"><img src="img/parteneri/jackson-guitars-seeklogo.png" alt="jackson"></div>
+			<div class="brand"><img src="img/parteneri/tortex-seeklogo.png" alt="dunlop"></div>
+			<div class="brand"><img src="img/parteneri/Marshall_logo.svg.png" alt="marshall"></div>
+			<div class="brand"><img src="img/parteneri/fender-seeklogo.png" alt="squier"></div>
+			<div class="brand"><img src="img/parteneri/yamaha-seeklogo.png" alt="yamaha"></div>
+
+			<!-- Dublăm pentru animație infinită -->
+			<div class="brand"><img src="img/parteneri/ariaproII-logo.png" alt="ariaproii"></div>
+			<div class="brand"><img src="img/parteneri/boss-seeklogo.png" alt="boss"></div>
+			<div class="brand"><img src="img/parteneri/daddario-seeklogo.png" alt="daddario"></div>
+			<div class="brand"><img src="img/parteneri/epiphone-guitars-seeklogo.png" alt="epiphone"></div>
+			<div class="brand"><img src="img/parteneri/ibanez-seeklogo.png" alt="ibanez"></div>
+			<div class="brand"><img src="img/parteneri/gibson-seeklogo.png" alt="gibson"></div>
+			<div class="brand"><img src="img/parteneri/Jackson_guitars_logo.svg.png" alt="jackson"></div>
+			<div class="brand"><img src="img/parteneri/tortex-seeklogo.png" alt="dunlop"></div>
+			<div class="brand"><img src="img/parteneri/Marshall_logo.svg.png" alt="marshall"></div>
+			<div class="brand"><img src="img/parteneri/fender-seeklogo.png" alt="squier"></div>
+			<div class="brand"><img src="img/parteneri/yamaha-seeklogo.png" alt="yamaha"></div>
+		  </div>
+	</section>
+</main>
+
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CLUCD. Toate drepturile rezervate.</p>
+            <div class="socials">
+                <a href="livrare.html">Livrare</a> |
+                <a href="garantie.html">Garanție</a> |
+                <a href="service.html">Service</a>
+            </div>
+			<div class="footer-logos">
+			  <img src="img/clucd-logo.png" alt="CLUCD" class="footer-logo" />
+			  <img src="img/visa-logo.png" alt="Visa" class="footer-logo-visa" />
+			  <img src="img/mastercard-logo.png" alt="Mastercard" class="footer-logo-mastercard" />
+			</div>
+        </div>
+</footer>
+	
+  <div class="modal" id="cart-modal">
+	  <div class="modal-content cart-modal-content">
+		<span class="modal-close" onclick="closeCartModal()">&times;</span>
+		<h3>Coșul Meu</h3>
+		<ul id="cart-items"></ul>
+		<p><strong>Total:</strong> <span id="cart-total">0</span> MDL</p>
+		<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+		  <button onclick="finalizeazaComanda()">Finalizează comanda</button>
+		  <button onclick="golesteCos()" style="background:red;">Golește coșul</button>
+		</div>
+
+	  </div>
+</div>
+
+<button id="scrollTopBtn" title="Sus">↑</button>
+
+      <script src="js/script.js"></script>
+
+</body>
+</html>

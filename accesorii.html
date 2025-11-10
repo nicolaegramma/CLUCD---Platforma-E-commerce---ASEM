@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesorii - CLUCD</title>
+  <link rel="icon" type="image/png" href="img/clucd-main.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/produse.css">
+  <link rel="stylesheet" href="css/accesorii.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+	<header class="header-fixed">
+		<div class="topbar">
+		  <div class="topbar-content">
+			<span>📞 +373 600 00 000</span>
+			<span>✉️ contact@clucd.md</span>
+		  </div>
+		</div>
+
+		 <nav class="navbar">
+		  <a href="index.html" class="logo">
+			<img src="img/clucd-logo.png" alt="CLUCD" />
+		  </a>
+
+	<button class="hamburger" onclick="toggleMobileMenu()">
+	  <i class="fas fa-bars"></i>
+	</button>
+	
+		  <ul class="nav-links">
+			<li><a href="index.html">Acasă</a></li>
+			<li class="dropdown">
+			  <a href="produse.html">Produse</a>
+			  <ul class="dropdown-menu">
+				<li><a href="chitare.html">Chitare</a></li>
+				<li><a href="efecte.html">Efecte și Amplificatoare</a></li>
+				<li><a href="accesorii.html">Accesorii</a></li>
+			  </ul>
+			</li>
+			
+			<li class="dropdown">
+			  <a href="despre.html">Despre</a>
+			  <ul class="dropdown-menu">
+				<li><a href="despre.html">Noi</a></li>
+				<li><a href="livrare.html">Livrare</a></li>
+				<li><a href="garantie.html">Garanție</a></li>
+				<li><a href="service.html">Service</a></li>
+			  </ul>
+			</li>
+
+			<li><a href="contact.html">Contact</a></li>
+		  </ul>
+
+		  <!-- Coș de cumpărături -->
+		<button class="cart-modern" onclick="toggleCart()">
+		  <i class="fas fa-shopping-cart"></i>
+		  Coș (<span id="cart-count">0</span>)
+		</button>
+		</nav>
+	</header>
+
+<main>
+	<section class="produse">
+    <h2>Accesorii</h2>
+
+    <div class="filters">
+      <select id="filter-pret">
+        <option value="">Sortare după preț</option>
+        <option value="asc">Crescător</option>
+        <option value="desc">Descrescător</option>
+    </select>
+	
+    <select id="filter-producator">
+        <option value="">Toți producătorii</option>
+		<option value="Aria">Aria</option>
+		<option value="BOSS">BOSS</option>
+		<option value="D'Addario">D'Addario</option>
+		<option value="Dunlop">Dunlop</option>
+        <option value="Fender">Fender</option>
+		<option value="Korg">Korg</option>
+		<option value="Hercules">Hercules</option>
+		<option value="Gotoh">Gotoh</option>
+    </select>
+	 
+    <select id="filter-tip">
+        <option value="">Toate tipurile</option>
+        <option value="cabluri">Cabluri</option>
+		<option value="corzi">Corzi</option>
+        <option value="huse">Huse</option>
+		<option value="afinatoare">Afinatoare</option>
+		<option value="suporturi">Suporturi chitară</option>
+		<option value="curele">Curele</option>
+		<option value="componente">Componente</option>
+		<option value="curățare">Curățare</option>
+      </select>
+    </div>
+    <div class="product-grid" id="product-list">
+    </div>
+	</section>
+</main>
+
+<!-- Popup Detalii -->
+	<div class="modal" id="product-modal">
+	  <div class="modal-content">
+		<span class="modal-close" onclick="closeModal()">&times;</span>
+		<h3 id="modal-title"></h3>
+		<img id="modal-img" src="" alt="" style="width:100%; margin-bottom:10px;">
+		<p id="modal-desc"></p>
+	  </div>
+	</div>
+
+
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CLUCD. Toate drepturile rezervate.</p>
+            <div class="socials">
+                <a href="livrare.html">Livrare</a> |
+                <a href="garantie.html">Garanție</a> |
+                <a href="service.html">Service</a>
+            </div>
+			<div class="footer-logos">
+			  <img src="img/clucd-logo.png" alt="CLUCD" class="footer-logo" />
+			  <img src="img/visa-logo.png" alt="Visa" class="footer-logo-visa" />
+			  <img src="img/mastercard-logo.png" alt="Mastercard" class="footer-logo-mastercard" />
+			</div>
+        </div>
+</footer>
+	
+	
+	<div class="modal" id="cart-modal">
+		  <div class="modal-content cart-modal-content">
+			<span class="modal-close" onclick="closeCartModal()">&times;</span>
+			<h3>Coșul Meu</h3>
+			<ul id="cart-items"></ul>
+			<p><strong>Total:</strong> <span id="cart-total">0</span> MDL</p>
+			<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+			  <button onclick="finalizeazaComanda()">Finalizează comanda</button>
+			  <button onclick="golesteCos()" style="background:red;">Golește coșul</button>
+			</div>
+
+		  </div>
+	</div>
+
+<button id="scrollTopBtn" title="Sus">↑</button>
+
+<script src="js/script.js"></script>
+<script src="js/produse.js"></script>
+<script src="data/accesorii.js"></script>
+
+</body>
+</html>

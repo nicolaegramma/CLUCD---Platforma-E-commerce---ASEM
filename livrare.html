@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Livrare - CLUCD</title>
+  <link rel="icon" type="image/png" href="img/clucd-main.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/produse.css" />
+  <link rel="stylesheet" href="css/livrare.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <header class="header-fixed">
+    <div class="topbar">
+      <div class="topbar-content">
+        <span>📞 +373 600 00 000</span>
+        <span>✉️ contact@clucd.md</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="img/clucd-logo.png" alt="CLUCD" />
+      </a>
+	  
+	<button class="hamburger" onclick="toggleMobileMenu()">
+	  <i class="fas fa-bars"></i>
+	</button>
+	
+  <ul class="nav-links">
+    <li><a href="index.html">Acasă</a></li>
+    <li class="dropdown">
+      <a href="produse.html">Produse</a>
+      <ul class="dropdown-menu">
+        <li><a href="chitare.html">Chitare</a></li>
+        <li><a href="efecte.html">Efecte și Amplificatoare</a></li>
+        <li><a href="accesorii.html">Accesorii</a></li>
+      </ul>
+    </li>
+	
+	
+	<li class="dropdown">
+	  <a href="despre.html">Despre</a>
+	  <ul class="dropdown-menu">
+		<li><a href="despre.html">Noi</a></li>
+		<li><a href="livrare.html">Livrare</a></li>
+		<li><a href="garantie.html">Garanție</a></li>
+		<li><a href="service.html">Service</a></li>
+	  </ul>
+	</li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+      <button class="cart-modern" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        Coș (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+  </header>
+
+<main>
+	<section class="livrare-section">
+		  <img src="img/livrare-clucd.png" alt="Livrare CLUCD" class="livrare-img">
+
+			<h1>Informații despre Livrare</h1>
+			<p>La CLUCD, ne angajăm să livrăm comanda ta în cel mai scurt timp posibil, în siguranță și în cele mai bune condiții.</p>
+
+			<h2>Durata estimativă de livrare</h2>
+			<ul>
+			  <li>Chișinău: 1–2 zile lucrătoare</li>
+			  <li>Alte orașe din Moldova: 2–5 zile lucrătoare</li>
+			</ul>
+
+			<h2>Costuri de livrare</h2>
+			<ul>
+			  <li>Gratuit pentru comenzi peste 2000 MDL</li>
+			  <li>100 MDL pentru comenzi sub 2000 MDL</li>
+			</ul>
+
+			<h2>Metode de livrare</h2>
+			<ul>
+			  <li>Curier rapid (Fan Courier / Nova Poshta)</li>
+			  <li>Ridicare personală din magazinul nostru</li>
+			</ul>
+
+			<h2>Urmărirea comenzii</h2>
+			<p>După confirmarea comenzii, vei primi un e-mail cu linkul de urmărire. Poți verifica statusul comenzii în orice moment.</p>
+
+			<h2>Întrebări?</h2>
+			<p>Contactează-ne la <a href="mailto:support@clucd.md">support@clucd.md</a> sau <a href="contact.html">pagina de contact</a>.</p>
+	</section>
+</main>
+
+
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CLUCD. Toate drepturile rezervate.</p>
+            <div class="socials">
+                <a href="livrare.html">Livrare</a> |
+                <a href="garantie.html">Garanție</a> |
+                <a href="service.html">Service</a>
+            </div>
+			<div class="footer-logos">
+			  <img src="img/clucd-logo.png" alt="CLUCD" class="footer-logo" />
+			  <img src="img/visa-logo.png" alt="Visa" class="footer-logo-visa" />
+			  <img src="img/mastercard-logo.png" alt="Mastercard" class="footer-logo-mastercard" />
+			</div>
+        </div>
+</footer>
+	
+	
+<div class="modal" id="cart-modal">
+		  <div class="modal-content cart-modal-content">
+			<span class="modal-close" onclick="closeCartModal()">&times;</span>
+			<h3>Coșul Meu</h3>
+			<ul id="cart-items"></ul>
+			<p><strong>Total:</strong> <span id="cart-total">0</span> MDL</p>
+			<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+			  <button onclick="finalizeazaComanda()">Finalizează comanda</button>
+			  <button onclick="golesteCos()" style="background:red;">Golește coșul</button>
+			</div>
+		  </div>
+</div>
+
+<button id="scrollTopBtn" title="Sus">↑</button>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
