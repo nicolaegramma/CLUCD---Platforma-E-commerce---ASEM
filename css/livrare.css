@@ -1,0 +1,84 @@
+.livrare-section h1,
+.livrare-section h2,
+.garantie-section h1,
+.garantie-section h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.livrare-section h1 {
+  animation-delay: 0.1s;
+}
+.livrare-section h2 {
+  animation-delay: 0.2s;
+}
+.garantie-section h1 {
+  animation-delay: 0.1s;
+}
+.garantie-section h2 {
+  animation-delay: 0.2s;
+}
+
+  .livrare-section {
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .livrare-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff3c3c;
+  }
+
+  .livrare-section h2 {
+    color: #1e1e1e;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .livrare-section ul {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .livrare-section p {
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+
+  .livrare-section a {
+    color: #ff3c3c;
+    text-decoration: none;
+  }
+
+  .livrare-section a:hover {
+    text-decoration: underline;
+  }
+  
+.livrare-img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  object-fit: contain;
+  background-color: transparent;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

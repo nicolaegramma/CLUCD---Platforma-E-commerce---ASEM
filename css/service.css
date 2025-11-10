@@ -1,0 +1,88 @@
+    .service-section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .service-img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 0 auto 2rem auto;
+      object-fit: contain;
+      background-color: transparent;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+    .service-section h1,
+    .service-section h2 {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .service-section h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #ff3c3c;
+      animation-delay: 0.1s;
+    }
+    .service-section h2 {
+      color: #1e1e1e;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      animation-delay: 0.2s;
+    }
+    .service-section ul {
+      padding-left: 1.5rem;
+      line-height: 1.8;
+    }
+    .service-section p {
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+    .service-section a {
+      color: #ff3c3c;
+      text-decoration: none;
+    }
+    .service-section a:hover {
+      text-decoration: underline;
+    }
+    form.service-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    form.service-form input,
+    form.service-form textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form.service-form button {
+      background-color: #ff3c3c;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form.service-form button:hover {
+      background-color: #cc2f2f;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

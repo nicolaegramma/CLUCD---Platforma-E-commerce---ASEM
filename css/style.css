@@ -1,0 +1,366 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+	  display: flex;
+  flex-direction: column;
+    padding-top: 120px;
+}
+
+
+main {
+  flex: 1;
+}
+/* NAVBAR */
+.navbar {
+position: relative; /* ← important pentru dropdown absolut */
+  z-index: 2000;       /* ← mai mare decât orice în content */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 3vw;
+  background-color: #1c1c1c;
+  flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+    position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-links li a:hover {
+  color: red;
+}
+
+.nav-links {
+	  list-style: none;
+	  display: flex;
+	  gap: 1.5rem;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  align-items: center;
+	  /* elimină position: absolute și transform */
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+	  font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  min-width: 200px;
+  z-index: 3000; /* ← clar peste tot restul */
+  display: none;
+  flex-direction: column;
+}
+
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: white;
+}
+
+/* Afișare la hover pe desktop */
+.dropdown:hover .dropdown-menu {
+  display: flex; /* ← asigură afișarea completă */
+}
+
+/* Ascundem hamburgerul implicit (pe desktop) */
+.hamburger {
+  display: none !important;
+}
+
+
+/* CONȚINUT */
+main, .produse, .categorii-produse {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1c1c1c;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+	  color: #fff !important;
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.socials a:hover {
+    color: red;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;       /* mărit de la 20px */
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+
+.footer-logo {
+  height: 45px; /* CLUCD logo mărit */
+  opacity: 1;
+}
+
+.footer-logo-visa {
+  height: 30px; /* dimensiune recomandată pentru Visa */
+  opacity: 1;
+}
+
+.footer-logo-mastercard {
+  height: 45px; /* Mastercard mai mare decât Visa */
+  opacity: 1;
+}
+
+/* ANIMAȚIE */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* HEADINGS */
+.produse h2,
+.categorii-produse h2 {
+    color: #1e1e1e;
+}
+
+.categorii-descriere {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #333;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.topbar {
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.4rem 2rem;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #1c1c1c;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: visible; /* ← permite dropdown să iasă */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.logo img {
+    height: 60px;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+	
+{
+  margin-left: 1rem;
+}
+
+.echipa, .valori, .galerie {
+  padding: 2rem;
+  text-align: center;
+}
+
+.echipa-grid, .galerie-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.membru {
+  max-width: 200px;
+}
+
+.membru img, .galerie-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.image-banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banner-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner-slide.active {
+  opacity: 1;
+}
+
+.banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  background: linear-gradient(135deg, #ff3c3c, #cc0000);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff5e5e, #b80000);
+}
+
+/* ✅ Versiune compactă pentru mobil */
+@media (max-width: 480px) {
+  #scrollTopBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+
+
+/* Ecran preloader full */
+#global-preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Logo mărit + animație */
+.preloader-logo {
+  width: 260px;
+  animation: bounceFade 2s ease-in-out infinite;
+}
+
+@keyframes bounceFade {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px);
+    opacity: 1;
+  }
+}

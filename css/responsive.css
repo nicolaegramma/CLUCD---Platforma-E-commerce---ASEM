@@ -1,0 +1,162 @@
+
+/* ========= MEDIA QUERIES pentru mobil CLUCD ========== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5vw;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1c1c1c;
+    padding: 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding-left: 1rem;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+.hamburger {
+  display: none !important;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block !important;
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+  
+    .nav-links.active {
+    display: flex;
+  }
+  
+    .nav-links a {
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .cart-modern {
+    align-self: flex-end;
+  }
+}
+
+
+  /* Slide content */
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  /* Grile generale */
+  .chitara-row,
+  .chitara-row.reverse,
+  .angajati-grid,
+  .valori-grid,
+  .galerie-grid,
+  .product-grid,
+  .noutati-grid,
+  .footer-logos,
+  .beneficii {
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Carduri produse */
+  .product-card {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  /* Filtre produse */
+  .filters {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  /* Formulare checkout */
+  .checkout-container {
+    padding: 1rem;
+  }
+
+  .checkout-form .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checkout-form input,
+  .checkout-form select {
+    width: 100%;
+  }
+
+  /* Modal coș */
+  .cart-modal-content,
+  .modal-content {
+    width: 95% !important;
+    padding: 1.5rem;
+  }
+
+  /* Footer */
+  .footer-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Contact */
+  .contact-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* Butoane */
+  .btn, button {
+    width: 100%;
+    max-width: 100%;
+  }
+}

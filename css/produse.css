@@ -1,0 +1,526 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 32px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.filters select {
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 30px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+  min-width: 200px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+.filters select:hover,
+.filters select:focus {
+  background-color: #2a2a2a;
+  color: red;
+  border-color: red;
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+}
+
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* ← Asta e cheia */
+  gap: 100px;         /* spațiu între produse */
+  padding: 10px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+
+.product-card {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* controlăm înălțimea */
+  object-fit: contain; /* imaginea nu se taie */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fff; /* opțional: fundal neutru dacă imaginea nu e mare */
+}
+
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+.product-card button {
+  background: #1c1c1c;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-card button:hover {
+  background: #333;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.product-card button:first-of-type {
+  background: linear-gradient(135deg, #ff3c3c, #cc0000);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.product-card button:first-of-type:hover {
+  background: linear-gradient(135deg, #ff5e5e, #b80000);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+}
+
+.product-card button i {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.product-card button i {
+  margin-right: 6px;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.product-card button:hover i {
+  transform: scale(1.2);
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#cart-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Închidere */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 26px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Listă produse */
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#cart-items li {
+  background: #f7f7f7;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #222;
+}
+
+/* Total */
+.cart-modal-content p strong {
+  font-size: 16px;
+  color: #333;
+}
+
+#cart-total {
+  font-weight: bold;
+  color: #cc0000;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
+/* Titlu */
+.cart-modal-content h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #cc0000;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+
+/* Fereastra */
+.cart-modal-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideFadeIn 0.4s ease-out forwards;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#cart-items li {
+  background: #f7f7f7;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #222;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-item-controls button {
+  padding: 4px 10px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.cart-item-controls input {
+  width: 40px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cart-item-remove {
+  background: black;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.cart-modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background: linear-gradient(135deg, #ff3c3c, #cc0000);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.modal-content button:hover {
+  background: linear-gradient(135deg, #ff5e5e, #b80000);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+}
+
+/* ✅ Golește coșul – stil închis */
+.modal-content button[style*="background:red"] {
+  background: #1c1c1c !important;
+  color: white !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  border: none;
+}
+
+.modal-content button[style*="background:red"]:hover {
+  background: #2a2a2a !important;
+  color: red !important;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+
+.cart-modern {
+  background: linear-gradient(135deg, #ff3c3c, #cc0000);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cart-modern i {
+  font-size: 18px;
+}
+
+.cart-modern:hover {
+  background: linear-gradient(135deg, #ff5e5e, #b80000);
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+}
+
+
+
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 5vw;
+    flex-wrap: wrap;
+}
+
+
+.brand:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+.brand img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+.brand-slider-auto {
+  overflow: hidden;
+  background: #444;
+  padding: 2rem 0;
+  border-radius: 20px;
+  margin: 3rem 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.brand-slider-auto h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.slider-auto-track {
+  display: flex;
+  gap: 4rem;
+  width: fit-content;
+  animation: slide-left 60s linear infinite;
+}
+
+.brand {
+  flex: 0 0 auto;
+}
+
+.brand img {
+  height: 60px;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: none;
+  pointer-events: none;
+  transform: none;
+}
+
+
+.brand img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+text-decoration: none !important;
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+  background: linear-gradient(145deg, #fafafa, #ffffff);
+}
+
+.category-card img {
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #cc0000;
+  transition: color 0.3s ease;
+}
+
+.category-card:hover .category-title {
+  color: #222;
+}
+
+.category-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.category-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.category-card img.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#chitare-img, #efecte-img, #accesorii-img {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
